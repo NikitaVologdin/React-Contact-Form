@@ -84,29 +84,29 @@ export default function App() {
     setMessageValue("");
   }
 
-  async function fetchData(target: HTMLFormElement) {
-    const fd = new FormData(target);
-    const fdObject = Object.fromEntries(fd.entries());
-    try {
-      const response = await fetch("", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(fdObject),
-      });
-      const json = await response.json();
-      if (response.ok) {
-        return { status: "success", message: json.message };
-      } else {
-        console.error("");
-      }
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        return { status: "failure", message: e.message };
-      }
-    }
-  }
+  // async function fetchData(target: HTMLFormElement) {
+  //   const fd = new FormData(target);
+  //   const fdObject = Object.fromEntries(fd.entries());
+  //   try {
+  //     const response = await fetch("", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(fdObject),
+  //     });
+  //     const json = await response.json();
+  //     if (response.ok) {
+  //       return { status: "success", message: json.message };
+  //     } else {
+  //       console.error("");
+  //     }
+  //   } catch (e: unknown) {
+  //     if (e instanceof Error) {
+  //       return { status: "failure", message: e.message };
+  //     }
+  //   }
+  // }
 
   const formSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
