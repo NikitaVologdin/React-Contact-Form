@@ -240,6 +240,10 @@ input[type="checkbox"]:checked + label:before {
     width: 100%;
   }
 
+  .form-section {
+    padding: 40px;
+  }
+
   .form__fieldset:first-child {
     display: grid;
     grid-template-columns: 1fr 1fr;
